@@ -1,0 +1,28 @@
+<h1>Kids Bulle Challenge !</h1>
+
+<table>
+	<thead>
+		<tr>
+			<th>Nom</th>
+			<th>Score</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @scores.each do |score| %>
+			<tr id=<%= "score_#{score.id}" %>>
+				<td><%= score.name %></td>
+				<td class="points"><%= score.points %></td>
+				<td><%= link_to "UP", score_path(score), method: :patch, remote: true %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
+
+<%= form_for @score, remote: true do |f| %>
+
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+
+	<%= f.submit "Ajouter" %>
+
+<% end %>
