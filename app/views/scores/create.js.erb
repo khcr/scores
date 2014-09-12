@@ -1,1 +1,1 @@
-$("tbody").append("<tr><td><%=j @score.name %></td><td><%=j @score.points.to_s %></td><td><%=j link_to 'UP', score_path(@score), method: :patch, remote: true %></td></tr>");
+$("tbody").append("<tr><td><%=j @score.name %></td><td><%=j @score.points.to_s %></td><td><%=j link_to 'UP ▲', score_path(@score), method: :patch, remote: true %></td></tr>");

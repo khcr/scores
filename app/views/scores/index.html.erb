@@ -1,28 +1,32 @@
-<h1>Kids Bulle Challenge !</h1>
+<div class="scores">
 
-<table>
-	<thead>
-		<tr>
-			<th>Nom</th>
-			<th>Score</th>
-		</tr>
-	</thead>
-	<tbody>
-		<% @scores.each do |score| %>
-			<%= content_tag :tr, id: "score_#{score.id}" do %>
-				<td><%= score.name %></td>
-				<td class="points"><%= score.points %></td>
-				<td><%= link_to "UP", score_path(score), method: :patch, remote: true if score != @scores.first %></td>
+	<h1>Kids Bulle Challenge !</h1>
+
+	<table>
+		<thead>
+			<tr>
+				<th>Nom</th>
+				<th>Score</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @scores.each do |score| %>
+				<%= content_tag :tr, id: "score_#{score.id}", class: cycle('odd', 'even') do %>
+					<td><%= score.name %></td>
+					<td class="points"><%= score.points %></td>
+					<td><%= link_to "UP ▲", score_path(score), method: :patch, remote: true if score != @scores.first %></td>
+				<% end %>
 			<% end %>
-		<% end %>
-	</tbody>
-</table>
+		</tbody>
+	</table>
 
-<%= form_for @score, remote: true do |f| %>
+	<%= form_for @score, remote: true do |f| %>
 
-	<%= f.label :name %>
-	<%= f.text_field :name %>
+		<%= f.label :name %>
+		<%= f.text_field :name %>
 
-	<%= f.submit "Ajouter" %>
+		<%= f.submit "Ajouter" %>
 
-<% end %>
+	<% end %>
+
+</div>

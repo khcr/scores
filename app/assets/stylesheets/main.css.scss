@@ -1,0 +1,59 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,600);
+
+html, body
+{
+	font: 300 15px/17px 'Open Sans', tahoma;
+	height: 100%;
+	background: rgb(29, 29, 29);
+	color: whitesmoke;
+}
+
+h1 {
+	text-align: center;
+	padding: 30px;
+}
+
+a {
+	text-decoration: none;
+	color: #B21212;
+	font-weight: bold;
+}
+
+
+
+
+/* ------------  reset ------------ */
+
+* { padding: 0; margin: 0; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	/*line-height: 1; by nkcr */
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;          
+  box-sizing: border-box; 
+}
