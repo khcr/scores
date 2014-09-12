@@ -1,7 +1,12 @@
 current = $("#score_<%=j @score.id.to_s %>");
 current.find('.points').html(<%=j @score.points.to_s %>);
 prev = current.prev();
-while(prev.find('.points').text() !== "" && prev.find('.points').text() < <%=j @score.points.to_s %>) {
-	prev.before(current);
-	prev = current.prev();
+if(prev.find('.points').text() !== "" && prev.find('.points').text() < <%=j @score.points.to_s %>) {
+	current.fadeOut(1000, function() {
+		while(prev.find('.points').text() !== "" && prev.find('.points').text() < <%=j @score.points.to_s %>) {
+			current.after(prev);
+			prev = current.prev();
+		};
+	});
+	current.fadeIn();
 }

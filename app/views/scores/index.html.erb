@@ -9,11 +9,11 @@
 	</thead>
 	<tbody>
 		<% @scores.each do |score| %>
-			<tr id=<%= "score_#{score.id}" %>>
+			<%= content_tag :tr, id: "score_#{score.id}" do %>
 				<td><%= score.name %></td>
 				<td class="points"><%= score.points %></td>
-				<td><%= link_to "UP", score_path(score), method: :patch, remote: true %></td>
-			</tr>
+				<td><%= link_to "UP", score_path(score), method: :patch, remote: true if score != @scores.first %></td>
+			<% end %>
 		<% end %>
 	</tbody>
 </table>
