@@ -17,6 +17,9 @@
 			tr {
 				td {
 					padding: 10px;
+					&.points {
+						text-align: center;
+					}
 				}
 				&.event {
 					background: #23ff61;
