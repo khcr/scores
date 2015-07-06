@@ -14,7 +14,7 @@
 				<%= content_tag :tr, id: "score_#{score.id}", class: cycle('odd', 'even') do %>
 					<td><%= score.name %></td>
 					<td class="points"><%= score.points %></td>
-					<td><%= link_to "UP ▲", score_path(score), method: :patch, remote: true if score != @scores.first %></td>
+					<td><%= link_to "+1", score_path(score), method: :patch, remote: true %></td>
 				<% end %>
 			<% end %>
 		</tbody>
